@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New User Registration</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f4f4f4; }
+        .container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 10px; overflow: hidden; }
+        .header { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 30px; text-align: center; }
+        .content { padding: 40px 30px; }
+        .footer { background: #1e293b; color: white; padding: 20px; text-align: center; font-size: 14px; }
+        .button { background: #3b82f6; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; display: inline-block; margin: 20px 0; font-weight: bold; }
+        .user-info { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px; margin: 20px 0; }
+        .priority-box { background: #fff7ed; border: 1px solid #f59e0b; border-radius: 8px; padding: 15px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔔 Admin Action Required</h1>
+            <h2>New User Registration</h2>
+        </div>
+        
+        <div class="content">
+            <h3>Hello Administrator,</h3>
+            <p>A new user has submitted a registration request for the IGL AMC Dashboard and requires your approval.</p>
+            
+            <div class="user-info">
+                <h4>👤 User Information</h4>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;"><strong>Name:</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">{{userName}}</td></tr>
+                    <tr><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;"><strong>Email:</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">{{userEmail}}</td></tr>
+                    <tr><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;"><strong>Role:</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">{{userRole}}</td></tr>
+                    <tr><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;"><strong>Employee ID:</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">{{empId}}</td></tr>
+                    <tr><td style="padding: 8px 0;"><strong>Registration Date:</strong></td><td style="padding: 8px 0;">{{registrationDate}}</td></tr>
+                </table>
+            </div>
+
+            <div class="priority-box">
+                <h4>📝 Request Reason</h4>
+                <p>{{requestReason}}</p>
+            </div>
+
+            <h4>⚡ Admin Actions Required:</h4>
+            <ul>
+                <li>✅ <strong>Review user details</strong> and verify information</li>
+                <li>✅ <strong>Check authorization</strong> for the requested role</li>
+                <li>✅ <strong>Approve or reject</strong> the registration request</li>
+                <li>✅ <strong>Notify the user</strong> of your decision</li>
+            </ul>
+
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="{{adminUrl}}" class="button">Review Registration</a>
+            </div>
+
+            <p><strong>Note:</strong> Please review and respond within 24-48 hours to maintain good user experience.</p>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 IGL AMC Dashboard - Admin Panel</p>
+            <p>This is an automated admin notification.</p>
+        </div>
+    </div>
+</body>
+</html>

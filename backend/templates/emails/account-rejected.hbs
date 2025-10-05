@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Request Status</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f4f4f4; }
+        .container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 10px; overflow: hidden; }
+        .header { background: linear-gradient(135deg, #ef4444, #dc2626); color: white; padding: 30px; text-align: center; }
+        .content { padding: 40px 30px; }
+        .footer { background: #1e293b; color: white; padding: 20px; text-align: center; font-size: 14px; }
+        .warning-box { background: #fef2f2; border: 1px solid #ef4444; border-radius: 8px; padding: 20px; margin: 20px 0; }
+        .contact-box { background: #f0f9ff; border: 1px solid #3b82f6; border-radius: 8px; padding: 20px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚠️ Account Request Update</h1>
+            <h2>Registration Status</h2>
+        </div>
+        
+        <div class="content">
+            <h3>Hello {{userName}},</h3>
+            <p>We have reviewed your registration request for the IGL AMC Dashboard.</p>
+            
+            <div class="warning-box">
+                <h4>❌ Registration Status: REJECTED</h4>
+                <p><strong>Reason:</strong> {{rejectionReason}}</p>
+            </div>
+
+            <h4>📋 What This Means:</h4>
+            <ul>
+                <li>Your account request could not be approved at this time</li>
+                <li>You will not be able to access the dashboard</li>
+                <li>The rejection reason is provided above</li>
+            </ul>
+
+            <div class="contact-box">
+                <h4>📞 Next Steps:</h4>
+                <ul>
+                    <li>Contact the administrator at <strong>{{contactEmail}}</strong></li>
+                    <li>Provide additional documentation if required</li>
+                    <li>Resubmit your request after addressing the concerns</li>
+                </ul>
+            </div>
+
+            <p><strong>Important:</strong> If you believe this is an error, please contact our support team immediately.</p>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 IGL AMC Dashboard. Professional Contract Management.</p>
+            <p>This is an automated message. Please do not reply to this email.</p>
+        </div>
+    </div>
+</body>
+</html>

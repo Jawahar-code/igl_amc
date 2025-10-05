@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f4f4f4; }
+        .container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        .header { background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; padding: 40px 30px; text-align: center; }
+        .content { padding: 40px 30px; text-align: center; }
+        .footer { background: #1e293b; color: white; padding: 20px; text-align: center; font-size: 14px; }
+        .otp-box { background: #f0f9ff; border: 3px solid #3b82f6; border-radius: 16px; padding: 30px; margin: 30px 0; }
+        .otp-code { font-size: 42px; font-weight: bold; color: #1d4ed8; letter-spacing: 12px; margin: 20px 0; font-family: 'Courier New', monospace; }
+        .security-box { background: #fef3c7; border: 2px solid #f59e0b; border-radius: 8px; padding: 20px; margin: 25px 0; }
+        .highlight { color: #3b82f6; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔐 Email Verification Required</h1>
+            <h2>IGL AMC Dashboard</h2>
+        </div>
+        
+        <div class="content">
+            <h3>Hello <span class="highlight">{{userName}}</span>,</h3>
+            <p>Welcome to IGL AMC Dashboard! To complete your <strong>{{userRole}}</strong> account registration, please verify your email address using the verification code below:</p>
+            
+            <div class="otp-box">
+                <h4>🎯 Your Verification Code</h4>
+                <div class="otp-code">{{otp}}</div>
+                <p><strong>⏰ Valid for 10 minutes only</strong></p>
+            </div>
+
+            <div class="security-box">
+                <h4>🛡️ Security Guidelines</h4>
+                <ul style="text-align: left; margin: 10px 0; padding-left: 25px;">
+                    <li><strong>Time Limit:</strong> This code expires in <span class="highlight">10 minutes</span></li>
+                    <li><strong>Confidential:</strong> Never share this code with anyone</li>
+                    <li><strong>One-Time Use:</strong> Code becomes invalid after successful verification</li>
+                    <li><strong>Security:</strong> If you didn't request this, please ignore this email</li>
+                </ul>
+            </div>
+
+            <p>After successful verification, your account will be submitted for admin approval and you'll receive a confirmation email.</p>
+            
+            <div style="margin-top: 30px; padding: 20px; background: #ecfdf5; border-radius: 8px;">
+                <h4 style="color: #059669;">🚀 What's Next?</h4>
+                <p style="color: #047857;">Complete your registration → Admin approval → Access granted</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>© 2025 IGL AMC Dashboard</strong> - Professional Contract Management System</p>
+            <p>🔒 This is a secure, automated message. Please do not reply to this email.</p>
+        </div>
+    </div>
+</body>
+</html>

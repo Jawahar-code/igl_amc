@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>IGL AMC – Contract Expiry Digest</title>
+    <style>
+      body { font-family: Inter, Arial, sans-serif; color: #111827; }
+      .section-title { margin: 16px 0 8px; }
+      .expired { color: #b91c1c; }
+      .soon { color: #92400e; }
+      table { border-collapse: collapse; width: 100%; border: 1px solid #e5e7eb; }
+      th, td { padding: 8px; border: 1px solid #e5e7eb; text-align: left; font-size: 13px; }
+      thead tr.expired { background: #fef2f2; }
+      thead tr.soon { background: #fffbeb; }
+      .muted { color: #6b7280; font-size: 12px; }
+    </style>
+  </head>
+  <body>
+    <h2>IGL AMC – Contract Expiry Digest</h2>
+    <p>This is an automated summary of contracts nearing or past expiry.</p>
+
+    <h3 class="section-title expired">Expired Contracts ({{expired.length}})</h3>
+    <table>
+      <thead>
+        <tr class="expired">
+          <th>#</th>
+          <th>Contract ID</th>
+          <th>Type</th>
+          <th>Owner</th>
+          <th>Location</th>
+          <th>End Date</th>
+          <th>Days (negative = days ago)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#if expired.length}}
+          {{#each expired}}
+          <tr>
+            <td>{{inc @index}}</td>
+            <td><strong>{{this.contract_id}}</strong></td>
+            <td>{{this.type}}</td>
+            <td>{{this.owner}}</td>
+            <td>{{this.location}}</td>
+            <td>{{formatDate this.amc_end_date}}</td>
+            <td>{{this.days_until_expiry}}</td>
+          </tr>
+          {{/each}}
+        {{else}}
+          <tr>
+            <td colspan="7" class="muted" style="text-align:center;">No expired contracts 🎉</td>
+          </tr>
+        {{/if}}
+      </tbody>
+    </table>
+
+    <h3 class="section-title soon">Expiring Soon ({{soon.length}})</h3>
+    <table>
+      <thead>
+        <tr class="soon">
+          <th>#</th>
+          <th>Contract ID</th>
+          <th>Type</th>
+          <th>Owner</th>
+          <th>Location</th>
+          <th>End Date</th>
+          <th>Days left</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#if soon.length}}
+          {{#each soon}}
+          <tr>
+            <td>{{inc @index}}</td>
+            <td><strong>{{this.contract_id}}</strong></td>
+            <td>{{this.type}}</td>
+            <td>{{this.owner}}</td>
+            <td>{{this.location}}</td>
+            <td>{{formatDate this.amc_end_date}}</td>
+            <td>{{this.days_until_expiry}}</td>
+          </tr>
+          {{/each}}
+        {{else}}
+          <tr>
+            <td colspan="7" class="muted" style="text-align:center;">No contracts expiring soon.</td>
+          </tr>
+        {{/if}}
+      </tbody>
+    </table>
+
+    <p class="muted" style="margin-top:16px;">This is a system generated email from IGL AMC.</p>
+  </body>
+</html>

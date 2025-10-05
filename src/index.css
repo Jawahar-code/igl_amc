@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased font-sans;
+  }
+}
+
+@layer components {
+  .animated-gradient {
+    background: linear-gradient(-45deg, #f8fafc, #e2e8f0, #fef3c7, #fed7aa);
+    background-size: 400% 400%;
+    animation: gradientMove 20s ease infinite;
+  }
+  
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .animation-delay-500 {
+    animation-delay: 0.5s;
+  }
+  
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+  
+  /* Ensure smooth transitions */
+  .signup-mode {
+    /* All transitions are handled by individual transform classes */
+  }
+}
+
+@layer utilities {
+  /* Custom utilities if needed */
+}
+@keyframes gradientShift {
+    0% { filter: hue-rotate(0deg) brightness(1); }
+    25% { filter: hue-rotate(90deg) brightness(1.1); }
+    50% { filter: hue-rotate(180deg) brightness(0.9); }
+    75% { filter: hue-rotate(270deg) brightness(1.1); }
+    100% { filter: hue-rotate(360deg) brightness(1); }
+}
