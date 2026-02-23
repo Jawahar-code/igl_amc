@@ -1,8 +1,8 @@
 # AMC DASHBOARD - SETUP INSTRUCTIONS
 
-================================
+
 LOGIN CREDENTIALS
-================================
+
 
 Admin Account:
 - Email: adminigl@yopmail.com
